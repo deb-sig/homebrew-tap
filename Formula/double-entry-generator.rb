@@ -5,12 +5,12 @@
 class DoubleEntryGenerator < Formula
   desc "Rule-based double-entry bookkeeping importer (from Alipay/WeChat/Huobi to Beancount)."
   homepage "https://github.com/deb-sig/double-entry-generator"
-  version "0.0.0-test-brew.6"
+  version "1.5.2"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/deb-sig/double-entry-generator/releases/download/v0.0.0-test-brew.6/double-entry-generator_0.0.0-test-brew.6_Darwin_all.tar.gz"
-    sha256 "1cba08f8c29d7839c533cc4c02a714911b88e523c91b37fadf410384b0a67a36"
+    url "https://github.com/deb-sig/double-entry-generator/releases/download/v1.5.2/double-entry-generator_1.5.2_Darwin_all.tar.gz"
+    sha256 "9a4c146be10ee6dea6920b51bf046050f35baba06ec5d4bf2fddad4a51fee167"
 
     def install
       bin.install "double-entry-generator"
@@ -18,17 +18,17 @@ class DoubleEntryGenerator < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/deb-sig/double-entry-generator/releases/download/v0.0.0-test-brew.6/double-entry-generator_0.0.0-test-brew.6_Linux_x86_64.tar.gz"
-      sha256 "1d19c355eee676cd794f21eb99957ff702661869921acba698c7f969891a7f42"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/deb-sig/double-entry-generator/releases/download/v1.5.2/double-entry-generator_1.5.2_Linux_arm64.tar.gz"
+      sha256 "5313182114fe2a72b013a49b9ed38030b6ef83db0ab672856c3aecfb94965bed"
 
       def install
         bin.install "double-entry-generator"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/deb-sig/double-entry-generator/releases/download/v0.0.0-test-brew.6/double-entry-generator_0.0.0-test-brew.6_Linux_arm64.tar.gz"
-      sha256 "73d5b006258cbbf3908677bf1053ea1850f04e334a86516c7c1dcb3792473309"
+    if Hardware::CPU.intel?
+      url "https://github.com/deb-sig/double-entry-generator/releases/download/v1.5.2/double-entry-generator_1.5.2_Linux_x86_64.tar.gz"
+      sha256 "faf54daaab2b08a1c2ebb4c5bcaf1a46465483807a10e232ff759d9e2f496f88"
 
       def install
         bin.install "double-entry-generator"
