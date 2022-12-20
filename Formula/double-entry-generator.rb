@@ -5,12 +5,12 @@
 class DoubleEntryGenerator < Formula
   desc "Rule-based double-entry bookkeeping importer (from Alipay/WeChat/Huobi to Beancount)."
   homepage "https://github.com/deb-sig/double-entry-generator"
-  version "1.6.0"
+  version "1.7.0"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/deb-sig/double-entry-generator/releases/download/v1.6.0/double-entry-generator_1.6.0_Darwin_all.tar.gz"
-    sha256 "e565c464af541431c64a972812f644072ba9f438682afc6a9fcae1118c69c409"
+    url "https://github.com/deb-sig/double-entry-generator/releases/download/v1.7.0/double-entry-generator_1.7.0_Darwin_all.tar.gz"
+    sha256 "b08f590d3fe6713d3233c1a5d46a7e9d72cf2a5d91e171d3f0dd7da745f64577"
 
     def install
       bin.install "double-entry-generator"
@@ -18,17 +18,17 @@ class DoubleEntryGenerator < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/deb-sig/double-entry-generator/releases/download/v1.6.0/double-entry-generator_1.6.0_Linux_arm64.tar.gz"
-      sha256 "5e74aa21ffaa10e0dcc9f71d3f9a8c0f9ed7888e99b88d850b78cc39fbfa678c"
+    if Hardware::CPU.intel?
+      url "https://github.com/deb-sig/double-entry-generator/releases/download/v1.7.0/double-entry-generator_1.7.0_Linux_x86_64.tar.gz"
+      sha256 "daa81e8cda783b444af9d6eb17de6c5ed0da85502c5730e5e555c225bab31a4d"
 
       def install
         bin.install "double-entry-generator"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/deb-sig/double-entry-generator/releases/download/v1.6.0/double-entry-generator_1.6.0_Linux_x86_64.tar.gz"
-      sha256 "3f62d90fa6794106b940b39c594fa0db37350a2bde234e7dc1ff9eff3496abd8"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/deb-sig/double-entry-generator/releases/download/v1.7.0/double-entry-generator_1.7.0_Linux_arm64.tar.gz"
+      sha256 "52db0c31a05f68f1927e4549d5b0195d9cbc1005f1609f18903859e1ea72fee8"
 
       def install
         bin.install "double-entry-generator"
