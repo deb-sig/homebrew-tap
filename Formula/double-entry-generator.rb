@@ -5,12 +5,12 @@
 class DoubleEntryGenerator < Formula
   desc "Rule-based double-entry bookkeeping importer (from Alipay/WeChat/Huobi to Beancount)."
   homepage "https://github.com/deb-sig/double-entry-generator"
-  version "2.1.0"
+  version "2.1.1"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/deb-sig/double-entry-generator/releases/download/v2.1.0/double-entry-generator_2.1.0_Darwin_all.tar.gz"
-    sha256 "cb8090403bcb8f958e4970d3e795bcca2438701d8f9fa6f0f08706cdd3fbd819"
+    url "https://github.com/deb-sig/double-entry-generator/releases/download/v2.1.1/double-entry-generator_2.1.1_Darwin_all.tar.gz"
+    sha256 "9f168ac3bc044107f80a3e570a99740f00298847c32f433583170ceb2522b619"
 
     def install
       bin.install "double-entry-generator"
@@ -19,16 +19,16 @@ class DoubleEntryGenerator < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/deb-sig/double-entry-generator/releases/download/v2.1.0/double-entry-generator_2.1.0_Linux_x86_64.tar.gz"
-      sha256 "4253f907948f927ee82259fa19b1aed843f8ba12a7300befcb44076888e01c16"
+      url "https://github.com/deb-sig/double-entry-generator/releases/download/v2.1.1/double-entry-generator_2.1.1_Linux_x86_64.tar.gz"
+      sha256 "f37fce3f1848427eeb915714e38cc09c3c90de16855a5991c03cbd501dc6e64a"
 
       def install
         bin.install "double-entry-generator"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/deb-sig/double-entry-generator/releases/download/v2.1.0/double-entry-generator_2.1.0_Linux_arm64.tar.gz"
-      sha256 "4cdb963979a7994c0ecec425de85f3d9c6400eda72e283aa1938c8bd9ff99026"
+      url "https://github.com/deb-sig/double-entry-generator/releases/download/v2.1.1/double-entry-generator_2.1.1_Linux_arm64.tar.gz"
+      sha256 "ef56f7b4ea050081415c942389f446e6fd3698862cf6ba8dea09deac1a38353b"
 
       def install
         bin.install "double-entry-generator"
